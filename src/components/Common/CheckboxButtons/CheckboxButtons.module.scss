@@ -1,0 +1,49 @@
+@import "@styles/mixins.scss";
+@import "@styles/variables.scss";
+
+.checkboxButtonWrapper {
+  display: flex;
+  column-gap: rem(8);
+}
+.checkboxButton {
+  display: flex;
+  cursor: pointer;
+  position: relative;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex-grow: 1;
+  span {
+    background-color: $white;
+    border-radius: rem(4);
+    border: 1px solid $grey;
+    padding: rem(12) rem(16);
+    width: 100%;
+    font-size: rem(16);
+    line-height: rem(24);
+    color: $grey;
+    text-align: center;
+  }
+  input[type="checkbox"] {
+    position: relative;
+
+    display: none;
+    flex-shrink: 0;
+    height: 0;
+    padding: 0;
+    margin-top: 4px;
+    appearance: none;
+    border: 1px solid #212121;
+    border-radius: 4px;
+    transition-duration: 0.3s;
+    background-color: #ffffff;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    &:checked {
+      + span {
+        background: $grey3;
+      }
+    }
+  }
+  // input[type="checkbox"]:checked + span {background-color: green;}
+}

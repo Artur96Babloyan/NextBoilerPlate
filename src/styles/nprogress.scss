@@ -1,0 +1,25 @@
+@import "./variables.scss";
+
+:root {
+  --nprogress-bg: #{$grey};
+  --nprogress-color: #{$primary};
+}
+
+#nprogress .bar {
+  background: var(--nprogress-color);
+  height: 0.5rem;
+  box-shadow: 0 0.5rem 0.5rem var(--nprogress-bg);
+}
+#nprogress .peg {
+  box-shadow: 0 0 1rem var(--nprogress-color), 0 0 0.5rem var(--nprogress-color);
+}
+#nprogress .spinner {
+  background: var(--nprogress-bg);
+  padding: 0.5rem;
+  margin: -0.25rem;
+  border-radius: 2rem;
+}
+#nprogress .spinner-icon {
+  border-top-color: var(--nprogress-color);
+  border-left-color: var(--nprogress-color);
+}

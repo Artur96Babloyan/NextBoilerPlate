@@ -1,0 +1,38 @@
+@import "@styles/mixins";
+@import "@styles/variables";
+
+.arrowButton {
+  padding: rem(12) rem(16);
+  color: $grey;
+  font-weight: 700;
+  font-size: rem(16);
+  line-height: 1;
+  letter-spacing: rem(1);
+  font-family: inherit;
+  border-radius: rem(6);
+  transition: all 0.3s ease;
+  background-color: $grey1;
+  border-width: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: rem(48);
+  @include breakpoint($medium) {
+    height: rem(56);
+    font-size: rem(16);
+    line-height: rem(20);
+  }
+
+  &:hover {
+    background-color: $grey2;
+  }
+  &:focus {
+    background-color: $primary;
+  }
+
+  &Icon {
+    display: inline-flex;
+    margin-left: rem(16);
+  }
+}

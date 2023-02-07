@@ -1,0 +1,110 @@
+@import "@styles/mixins";
+@import "@styles/variables";
+
+.button {
+  padding: rem(10) rem(24);
+  color: $white;
+  font-weight: 800;
+  font-size: rem(18);
+  line-height: rem(34);
+  letter-spacing: rem(1);
+  font-family: inherit;
+  transition: all 0.3s ease;
+  border-width: 0;
+  cursor: pointer;
+  max-height: fit-content;
+
+  @include below($medium) {
+    font-size: rem(16);
+    line-height: rem(34);
+  }
+
+  &.rounded {
+    border-radius: rem(6);
+  }
+
+  &.small {
+    font-size: rem(16);
+    padding: rem(6) rem(16);
+  }
+
+  &.large {
+    padding: rem(18) rem(36);
+  }
+
+  &.primary {
+    color: $grey;
+    background-color: $primary;
+
+    &:hover {
+      color: $white;
+      background-color: $grey;
+    }
+  }
+
+  &.dark {
+    color: $primary;
+    background-color: $grey;
+
+    &:hover {
+      color: $grey;
+      background-color: $primary;
+    }
+  }
+
+  &.darkSecondary {
+    color: $white;
+    background-color: $grey;
+
+    &:hover {
+      color: $grey;
+      background-color: $white;
+    }
+  }
+
+  &.darkWithoutHover {
+    color: $primary;
+    background-color: $grey;
+  }
+
+  &.light {
+    color: $grey;
+    background-color: $white;
+
+    &:hover {
+      color: $white;
+      background-color: $grey;
+    }
+  }
+
+  &.lightPrimary {
+    color: $grey;
+    background-color: $white;
+
+    &:hover {
+      color: $grey;
+      background-color: $primary;
+    }
+  }
+
+  &.darkPrimary{
+    color: $white;
+    background-color: $grey;
+
+    &:hover {
+      color: $grey;
+      background-color: $primary;
+    }
+  }
+
+  &.outlineLight {
+    color: $grey;
+    border: rem(1) solid $grey;
+    background-color: $white;
+
+    &:hover {
+      color: $white;
+      background-color: $grey;
+    }
+  }
+}

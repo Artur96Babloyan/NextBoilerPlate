@@ -1,0 +1,18 @@
+@import "@styles/mixins.scss";
+@import "@styles/variables.scss";
+
+.DividerWrapper {
+  padding-top: rem(60);
+  @include grid-container;
+  @include breakpoint($large) {
+    @include grid(1, 12);
+    padding-top: rem(120);
+    row-gap: 0 !important;
+  }
+  .Divider {
+    grid-column: 2 / span 10;
+    height: 1px;
+    opacity: 0.5;
+    background-color: $grey;
+  }
+}

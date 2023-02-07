@@ -1,0 +1,164 @@
+@import "@styles/mixins";
+@import "@styles/variables";
+.drawer {
+  &Title {
+    h5 {
+      font-size: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1.16px solid #212121;
+    }
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-right: 48px;
+    padding-top: 127px;
+    @include breakpoint($medium) {
+      padding-left: 48px;
+      padding-right: 48px;
+      padding-top: 127px;
+    }
+  }
+}
+.download {
+  padding: 0 rem(16);
+  margin-top: rem(24);
+  @include breakpoint($large) {
+    padding: 0;
+    margin-top: rem(80);
+  }
+
+  button {
+    width: 100%;
+    height: rem(56);
+    background-color: $primary;
+    justify-content: space-between;
+    @include breakpoint($medium) {
+      width: auto;
+    }
+
+    &:hover {
+      background-color: $white;
+    }
+    &:focus {
+      background-color: $primary;
+    }
+  }
+}
+
+.downloadForSticky {
+  border: 1px solid #212121;
+  border-radius: 6px;
+  margin-right: rem(24);
+  button {
+    width: 100%;
+    height: rem(40);
+    span {
+      font-size: 16px;
+      font-weight: 700;
+      @include below($medium) {
+        font-size: 11px;
+        font-weight: 700;
+        margin-right: 0 !important;
+      }
+    }
+    background-color: $primary;
+    justify-content: space-between;
+    @include breakpoint($medium) {
+      width: auto;
+      height: rem(56);
+    }
+
+    &:hover {
+      background-color: $white;
+    }
+    &:focus {
+      background-color: $primary;
+    }
+  }
+}
+.Form {
+  display: flex;
+  flex-direction: column;
+  @include below($medium) {
+    .formRowReverse {
+      display: grid;
+      grid-template-columns: 1fr;
+      transform: scale(-1);
+      .formCol {
+        transform: scale(-1);
+      }
+    }
+  }
+
+  input[type="submit"] {
+    border-radius: 0;
+    color: $primary;
+    font-weight: bold;
+    background-color: $grey;
+    margin-top: 1.5rem;
+  }
+
+  .formRow {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-left: 24px;
+    padding-right: 24px;
+    @include breakpoint($medium) {
+      padding-left: 48px;
+      padding-right: 48px;
+    }
+
+    @include below($medium) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .formTitle {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 127px;
+    padding-bottom: 24px;
+    
+    @include breakpoint($medium) {
+      padding-left: 48px;
+      padding-right: 48px;
+      padding-top: 127px;
+      padding-bottom: 24px;
+    }
+    h5 {
+      padding-bottom: 24px;
+      border-bottom: 2px solid #212121;
+    }
+  }
+
+  .formControl {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+
+  .hasError {
+    border-color: #d04423;
+    color: #d04423;
+    span {
+      color: #d04423;
+    }
+    > option:not(:first-child) {
+      color: #212121;
+    }
+    &::placeholder {
+      color: #d04423;
+      opacity: 1; /* Firefox */
+    }
+  }
+
+  .error {
+    color: #d04423;
+    font-size: 12px;
+    padding-top: 3px;
+  }
+
+  .radioGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

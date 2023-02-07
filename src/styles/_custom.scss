@@ -1,0 +1,581 @@
+@use "sass:math";
+
+// Select customize
+.selector {
+  &__input {
+    color: transparent;
+  }
+}
+
+.state-select {
+  .selector {
+    width: rem(50);
+
+    &__control {
+      border: 0;
+      min-height: auto;
+      box-shadow: none;
+      cursor: pointer;
+      background-color: transparent;
+    }
+    &__indicators {
+      display: none;
+    }
+    &__value-container {
+      padding-left: 0;
+      text-transform: uppercase;
+    }
+    &__menu {
+      margin-top: rem(4);
+      background-color: $primary;
+    }
+    &__option {
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: all 0.2s ease-in;
+
+      &--is-selected {
+        background-color: $white;
+        color: $grey;
+      }
+      &--is-focused {
+        background-color: $grey1;
+      }
+    }
+  }
+}
+
+// Hero Slider
+.hero-slider {
+  height: auto;
+
+  .slick-list,
+  .slick-track,
+  .slick-slide > div,
+  .slick-slide > div > div {
+    height: 100%;
+  }
+
+  .slick-list {
+    .slick-track {
+      display: flex;
+      align-items: stretch;
+
+      .slick-slide {
+        display: flex;
+        align-self: stretch;
+        height: unset;
+        z-index: 1;
+        > div {
+          width: 100%;
+        }
+      }
+
+      .slick-active {
+        z-index: 2;
+      }
+    }
+  }
+
+  .slick-dots {
+    @include breakpoint($large) {
+      bottom: rem(45);
+      right: rem(24);
+      text-align: right;
+    }
+    @include breakpoint($xx-large) {
+      right: calc(#{rem(48)} + #{rem(24)});
+    }
+    @include breakpoint($webXLarge) {
+      right: calc(#{rem(48)} + #{rem(24)} + (50% - #{rem(math.div(1920, 2))}));
+    }
+
+    li {
+      margin: 0;
+      &.slick-active {
+        button {
+          &::before {
+            opacity: 1;
+            color: $primary;
+            transition: all 0.2s ease-in;
+          }
+        }
+      }
+
+      button {
+        &::before {
+          opacity: 1;
+          color: $white;
+        }
+        &:focus::before,
+        &:hover::before {
+          color: $primary;
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}
+
+.timeline-slider {
+  height: 100%;
+  .slick-list,
+  .slick-track {
+    height: 100%;
+  }
+
+  .slick-list {
+    overflow: visible;
+    padding: 0 20% 0 0 !important;
+    .slick-track {
+      &::before {
+        display: none;
+      }
+      display: flex;
+      align-items: stretch;
+      column-gap: 24px;
+      .slick-slide {
+        display: flex;
+        align-self: stretch;
+        height: unset;
+        > div {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+// Latest Video and News slider
+.latest-slider {
+  position: relative;
+
+  .slick-list {
+    margin: 0 rem(-8);
+    @include breakpoint($large) {
+      padding: 0;
+      margin: 0 rem(-24);
+    }
+
+    .slick-track {
+      display: flex;
+    }
+
+    .slick-slide {
+      width: 68vw;
+      padding: 0 rem(8);
+      @include breakpoint($large) {
+        padding: 0 rem(24);
+        width: 35vw;
+      }
+    }
+  }
+
+  .slick-dots {
+    @include breakpoint($large) {
+      bottom: rem(-105);
+      text-align: right;
+    }
+
+    li {
+      margin: 0;
+      &.slick-active {
+        button {
+          &::before {
+            opacity: 1;
+            color: $primary;
+            transition: all 0.2s ease-in;
+          }
+        }
+      }
+
+      button {
+        &::before {
+          opacity: 1;
+          color: $grey;
+        }
+        &:focus::before,
+        &:hover::before {
+          color: $primary;
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}
+
+// TrustMaker slider
+.trustMaker-slider {
+  .slick-slider {
+    position: relative;
+
+    .slick-list {
+      margin: 0 rem(-20);
+      @include breakpoint($large) {
+        padding: 0;
+        margin: 0;
+      }
+
+      .slick-track {
+        display: flex;
+      }
+
+      .slick-slide {
+        width: 68vw;
+        padding: 0 rem(20);
+        @include breakpoint($large) {
+          padding: 0;
+          width: auto;
+        }
+      }
+    }
+
+    .slick-dots {
+      @include breakpoint($large) {
+        bottom: rem(-105);
+        text-align: right;
+      }
+
+      li {
+        margin: 0;
+        &.slick-active {
+          button {
+            &::before {
+              opacity: 1;
+              color: $primary;
+              transition: all 0.2s ease-in;
+            }
+          }
+        }
+
+        button {
+          &::before {
+            opacity: 1;
+            color: $grey;
+          }
+          &:focus::before,
+          &:hover::before {
+            color: $primary;
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
+
+  &--estate {
+    .slick-slider {
+      .slick-dots {
+        @include breakpoint($large) {
+          left: 50%;
+          bottom: rem(-105);
+          transform: translateX(-50%);
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+// Estate logo slider
+.estate-logo-slider {
+  .slick-slider {
+    position: relative;
+
+    .slick-list {
+      .slick-track {
+        display: flex;
+        align-items: center;
+      }
+
+      .slick-slide {
+        width: rem(168);
+        padding-right: rem(12);
+        @include breakpoint($medium) {
+          padding-right: rem(24);
+          width: rem(360);
+        }
+      }
+    }
+
+    .slick-dots {
+      @include breakpoint($large) {
+        bottom: rem(-105);
+        right: rem(24);
+        text-align: right;
+        margin-top: rem(262);
+      }
+      @include breakpoint($xx-large) {
+        right: calc(#{rem(48)} + #{rem(24)});
+      }
+      @include breakpoint($webXLarge) {
+        right: calc(#{rem(48)} + #{rem(24)} + (50% - #{rem(math.div(1720, 2))}));
+      }
+
+      li {
+        margin: 0;
+        &.slick-active {
+          button {
+            &::before {
+              opacity: 1;
+              color: $primary;
+              transition: all 0.2s ease-in;
+            }
+          }
+        }
+
+        button {
+          &::before {
+            opacity: 1;
+            color: $white;
+          }
+          &:focus::before,
+          &:hover::before {
+            color: $primary;
+            opacity: 0.5;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Estate Card Slider
+.estate-card-slider {
+  .slick-track {
+    display: flex;
+    .slick-slide {
+      height: inherit;
+      display: inline-flex;
+      & > div {
+        width: 100%;
+        display: inline-grid;
+      }
+    }
+  }
+  .slick-dots {
+    left: 50%;
+    bottom: rem(16);
+    transform: translateX(-50%);
+
+    li {
+      margin: 0;
+      &.slick-active {
+        button {
+          &::before {
+            opacity: 1;
+            color: $primary;
+            transition: all 0.2s ease-in;
+          }
+        }
+      }
+
+      button {
+        &::before {
+          opacity: 1;
+          color: $white;
+        }
+        &:focus::before,
+        &:hover::before {
+          color: $primary;
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}
+
+// Gallery modal slider
+.gallery-modal-slider {
+  position: relative;
+  .slick-list {
+    margin: 0 rem(-4);
+    @include breakpoint($large) {
+      padding-left: 15vw;
+    }
+
+    .slick-track {
+      display: flex;
+    }
+    .slick-slide {
+      width: 90vw;
+      padding: 0 rem(4);
+      @include breakpoint($large) {
+        padding: 0 rem(10);
+        width: 60vw;
+      }
+    }
+  }
+}
+
+// Community-gallery-slider
+.community-gallery-slider {
+  .slick-slide:not(.slick-active) {
+    @include breakpoint($large) {
+      div {
+        -webkit-transition: height 0.5s;
+        -moz-transition: height 0.5s;
+        -ms-transition: height 0.5s;
+        -o-transition: height 0.5s;
+        transition: height 0.5s;
+        padding-top: 30px;
+        height: 520.64px;
+      }
+      @include breakpoint($xx-large) {
+        div {
+          height: 620.64px;
+        }
+      }
+      @include breakpoint($webXXLarge) {
+        div {
+          height: 830.64px;
+        }
+      }
+      img {
+        filter: brightness(0.4);
+      }
+    }
+  }
+  .slick-active {
+    @include breakpoint($medium) {
+      div {
+        -webkit-transition: height 0.5s;
+        -moz-transition: height 0.5s;
+        -ms-transition: height 0.5s;
+        -o-transition: height 0.5s;
+        transition: height 0.5s;
+      }
+    }
+  }
+  position: relative;
+  .slick-list {
+    padding: 0 20% 0 0;
+    margin: 0 rem(-4);
+    @include below($medium) {
+      width: 92vw;
+      padding: 0;
+      margin: 0;
+    }
+    .slick-track {
+      display: flex;
+    }
+    .slick-slide {
+      width: 100vw;
+      @include breakpoint($medium) {
+        padding: 0 rem(10);
+        width: 80vw;
+      }
+    }
+  }
+}
+
+// Community-gallery-slider-for-next-steps
+.community-gallery-slider-for-next-steps {
+  position: relative;
+  .slick-list {
+    @include below($medium) {
+      width: 92vw;
+      padding: 0;
+      margin: 0;
+    }
+    .slick-track {
+      display: flex;
+    }
+    .slick-slide {
+      padding: 0 rem(10);
+      width: 100vw;
+      @include breakpoint($large) {
+        padding: 0 rem(10);
+        width: 80vw;
+      }
+    }
+  }
+}
+
+.timeline-slider {
+  position: relative;
+
+  .slick-list {
+    margin: 0 rem(-4);
+    .slick-track {
+      display: flex;
+      column-gap: 0;
+    }
+
+    .slick-slide {
+      width: 100vw;
+      padding: 0 rem(4);
+      @include breakpoint($large) {
+        width: 100vw;
+      }
+    }
+  }
+}
+
+// Advantages Slider
+.advantage-slider {
+  .slick-slider {
+    position: relative;
+
+    .slick-list {
+      margin: 0 rem(-20);
+      @include breakpoint($large) {
+        padding: 0;
+        margin: 0;
+      }
+
+      .slick-track {
+        display: flex;
+      }
+
+      .slick-slide {
+        width: 80vw;
+        padding: 0 rem(20);
+        @include breakpoint($large) {
+          padding: 0;
+          width: auto;
+        }
+      }
+    }
+  }
+}
+
+// Modal
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 1000ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.word-accent-color {
+  color: #ffca00;
+}
+
+// Map Popup
+.mapboxgl-popup-content {
+  padding: 0;
+  background-color: transparent;
+
+  .mapboxgl-popup-close-button {
+    width: 24px;
+    height: 24px;
+    top: rem(-10);
+    right: rem(-10);
+    color: $white;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $grey;
+    box-shadow: 0 0 rem(12) rgba($primary, 0.25);
+    border-radius: 100%;
+    z-index: 20;
+  }
+}

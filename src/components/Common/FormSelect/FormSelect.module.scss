@@ -1,0 +1,36 @@
+@import "@styles/mixins.scss";
+@import "@styles/variables.scss";
+
+.dropdown {
+  border-radius: rem(4);
+  border: 1px solid $grey;
+  padding: rem(12) rem(16);
+  width: 100%;
+  font-family: inherit;
+  font-size: rem(16);
+  line-height: rem(24);
+  min-height: rem(50);
+  color: $grey;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  background: url("/assets/icons/icon-select.svg");
+  border: 1.4px solid #212121;
+  background-repeat: no-repeat;
+  background-position-x: 95%;
+  background-position-y: 22px;
+  background-color: #ffffff;
+
+  &::before {
+    content: "/";
+    position: absolute;
+    display: block;
+    width: 25px;
+    height: 25px;
+    color: #2e2e2e;
+  }
+  &::placeholder {
+    font-size: 1rem;
+    color: $grey;
+  }
+}

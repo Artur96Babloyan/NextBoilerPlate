@@ -1,0 +1,33 @@
+@import "@styles/mixins";
+@import "@styles/variables";
+
+.actionButton {
+  border-radius: rem(6);
+  transition: all 0.3s ease;
+  border-width: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    color: $black;
+    font-weight: 400;
+    font-size: rem(12);
+    line-height: rem(20);
+    letter-spacing: rem(1);
+    @include breakpoint($medium) {
+      font-size: rem(14);
+    }
+  }
+
+  &Icon {
+    display: inline-flex;
+    margin-right: rem(8);
+
+    svg {
+      width: rem(20);
+      height: rem(20);
+    }
+  }
+}

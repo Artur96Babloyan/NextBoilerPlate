@@ -1,0 +1,20 @@
+@import "@styles/mixins.scss";
+@import "@styles/variables.scss";
+
+.input {
+  border-radius: rem(4);
+  border: 1px solid $grey;
+  padding: rem(12) rem(16);
+  width: 100%;
+  font-family: inherit;
+  font-size: rem(16);
+  line-height: rem(24);
+  // min-height: rem(50);
+  color: $grey;
+  &::placeholder {
+    color: $grey;
+  }
+  &:focus {
+    outline: none;
+  }
+}

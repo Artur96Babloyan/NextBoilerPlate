@@ -1,0 +1,56 @@
+@use "sass:math";
+
+@mixin breakpoint($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+@mixin below($breakpoint) {
+  @media (max-width: ($breakpoint - 1)) {
+    @content;
+  }
+}
+
+@mixin grid($mediumColumns: 1, $largeColumns: 2, $gridGap: rem(24)) {
+  display: grid;
+  gap: $gridGap;
+  width: 100%;
+  @include breakpoint($medium) {
+    grid-template-columns: repeat($mediumColumns, 1fr);
+  }
+  @include breakpoint($large) {
+    grid-template-columns: repeat($largeColumns, 1fr);
+  }
+  @include breakpoint($webLarge) {
+    gap: #{calc($gridGap * 2)};
+  }
+}
+
+@mixin grid-container {
+  margin: 0 auto;
+  max-width: rem(1920);
+  padding-left: rem(16);
+  padding-right: rem(16);
+
+  @include breakpoint($large) {
+    padding-left: rem(24);
+    padding-right: rem(24);
+  }
+  @include breakpoint($xx-large) {
+    padding-left: rem(48);
+    padding-right: rem(48);
+  }
+}
+
+@mixin shape-bg {
+  background-image: url("/assets/icons/icon-panel-type-2-mobile.svg");
+  background-size: cover;
+  background-position: bottom;
+  @include breakpoint($large) {
+    background-image: url("/assets/icons/icon-panel-type-2-desktop.svg");
+  }
+}
+
+@function rem($pixels) {
+  @return #{math.div($pixels, 16)}rem;
+}

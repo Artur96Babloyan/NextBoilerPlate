@@ -1,0 +1,78 @@
+@import "./mixins.scss";
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 700;
+}
+
+h1,
+.is-h1 {
+  font-size: rem(40);
+  line-height: rem(42);
+  @include breakpoint($large) {
+    font-size: rem(80);
+    line-height: rem(85);
+  }
+
+  &.home {
+    font-size: rem(48);
+    line-height: rem(58);
+    @include breakpoint($large) {
+      font-size: rem(90);
+      line-height: rem(95);
+    }
+  }
+}
+h2,
+.h2 {
+  font-size: rem(32);
+  line-height: 1.2;
+  @include breakpoint($large) {
+    font-size: rem(48);
+  }
+
+  &.home {
+    font-size: rem(40);
+    line-height: rem(42);
+    @include breakpoint($large) {
+      font-size: rem(56);
+      line-height: rem(60);
+    }
+  }
+}
+h3 {
+  font-size: rem(24);
+  line-height: rem(32);
+  @include breakpoint($large) {
+    font-size: rem(42);
+    line-height: rem(42);
+  }
+}
+h4 {
+  font-size: rem(18);
+  line-height: rem(28);
+  @include breakpoint($large) {
+    font-size: rem(32);
+    line-height: rem(42);
+  }
+}
+h5 {
+  font-size: rem(16);
+  line-height: rem(24);
+  @include breakpoint($large) {
+    font-size: rem(24);
+    line-height: rem(32);
+  }
+}
+
+ul li,
+p {
+  font-size: rem(16);
+  line-height: 1.5;
+  @include breakpoint($large) {
+    font-size: rem(18);
+  }
+}
