@@ -10,8 +10,7 @@ export default function Home() {
   return (
     <div>
       Hello World
-      <FormDrawer title={"Test"} />
-    
+      <FormDrawer  />
     </div>
   );
 }
