@@ -1,0 +1,45 @@
+@import "@styles/mixins";
+@import "@styles/variables";
+.drawer {
+  &Title {
+    h5 {
+      font-size: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1.16px solid #212121;
+    }
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-right: 48px;
+    padding-top: 127px;
+    @include breakpoint($medium) {
+      padding-left: 48px;
+      padding-right: 48px;
+      padding-top: 127px;
+    }
+  }
+}
+.download {
+  padding: 0 rem(16);
+  margin-top: rem(24);
+  @include breakpoint($large) {
+    padding: 0;
+    margin-top: rem(80);
+  }
+
+  button {
+    width: 100%;
+    height: rem(56);
+    background-color: $primary;
+    justify-content: space-between;
+    @include breakpoint($medium) {
+      width: auto;
+    }
+
+    &:hover {
+      background-color: $white;
+    }
+    &:focus {
+      background-color: $primary;
+    }
+  }
+}
